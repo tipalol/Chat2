@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="css/semantic.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="ui container">
+			<reg_form @registration_confirmed="enableChat" v-if="reg_status"></reg_form>
+			<chat v-else></chat>
+		</div>
+	</div>
+	<template id="reg-form-template">
+			<div class="ui segment">
+				<div class="ui form">
+					<h4 class="ui horizontal divider blue header">Вход в чат</h4>
+					<div class="field">
+						<label>Придумай ник-нейм</label>
+						<input type="text" placeholder="Введи придуманный ник-нейм" @keyup.enter="submitReg" v-model="nick">
+					</div>
+				</div>
+			</div>
+		</template>
+	<template id="template_chat">
+		<div class="ui segment">
+			
+			<h4 class="ui horizontal divider blue header">Вы зашли под ником {{nick}}</h4>
+			<div class="ui grid">
+				<div v-for="item in messages" class="row">
+					<div class="three wide column">
+						<div class="container">
+							<h4 class="ui blue header">{{item.nick}}</h4>
+						</div>
+					</div>
+					<div class="thirteen wide column">
+						<div class="container">
+							<h4 class="ui header">{{item.message}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="one column row">
+				<div class="column"><h4 class="ui header" style="color:white">&copy; Copyright Sorokin Dmitrii 2017</h4></div>
+			</div>
+			<div class="ui fluid action input">
+				<input @keyUp.enter="sendMessage" v-model="current_message_text" placeholder="Введите сообщение.." type="text">
+				<button @click="sendMessage" class="ui button">Отправить</button>
+			</div>
+			<div class="ui right tiny rail">
+    			<div class="ui segment">{{chars()}}/60</div>
+  			</div>
+		</div>
+	</template>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
