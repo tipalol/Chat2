@@ -68,5 +68,6 @@
 .modal-area {
   max-width: 90%;
   min-width: 90%;
+  max-height: 600px;
   font-size: 18px;
 }
