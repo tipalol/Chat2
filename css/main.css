@@ -28,6 +28,9 @@ footer {
 .new {
 	font-size: 22px;
 }
+.new:hover {
+	background: #edeef0;
+}
 .name {
 	font-size: 22px;
 	width: 40%;
@@ -42,7 +45,14 @@ footer {
 	position: fixed;
 	right: 0;
 	top: 0;
-	width: 300px;
-	height: 350px;
+	width: 100px;
+	height: 100px;
 	background: #fff;
+	font-size: 22px;
+	line-height: 100px;
+	text-align: center;
+	z-index: 1;
+}
+.clean:hover {
+	background: #edeef0;
 }

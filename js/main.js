@@ -9,6 +9,7 @@ var app = new Vue({
 	data: {
 		showModal: false,
 		modalText: 'Название заметки',
+		cleanTip: 'Удалить все заметки',
 		notes: [
 			
 		]
@@ -37,6 +38,11 @@ var app = new Vue({
 			this.showModal = false
 			console.log('closed')
 			this.modalText = ''
+		},
+		clean: function() {
+			this.notes = []
+			localStorage['notes'] = JSON.stringify(this.notes)
+			console.log('Notes cleaned');
 		}
 	}
 })
