@@ -45,4 +45,5 @@ footer {
 	width: 300px;
 	height: 350px;
 	background-image: url('img/clean.png');
+	background-size: cover;
 }
