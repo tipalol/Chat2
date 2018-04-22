@@ -19,17 +19,14 @@
 			</div>
 		</div>
 		<modal v-if="showModal" @close="close">
-    <!--
-      you can use custom content here to overwrite
-      default content
-    -->
-    <h3 slot="header">{{modalText.split(' ')[0]}}</h3>
-    <textarea class="modal-area" slot="body" v-model="modalText"></textarea>
-  </modal>
+			<h3 slot="header">{{modalText.split(' ')[0]}}</h3>
+			<textarea class="modal-area" slot="body" v-model="modalText"></textarea>
+		</modal>
 	</div>
 	<footer>
 		&copy; Сорокин Дмитрий 2018
 	</footer>
+	<div class="clean"></div>
 	<!-- template for the modal component -->
 	<script type="text/x-template" id="modal-template">
 		<transition name="modal">
@@ -62,7 +59,7 @@
 			</div>
 		</transition>
 	</script>
-	<script src="js/vue.js"></script>
+	<script src="js/vue-dev.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
